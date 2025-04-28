@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -36,13 +35,16 @@ const Header = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center"
           >
-            <span className="text-2xl md:text-3xl font-serif font-bold text-royal">ROYAL</span>
-            <span className="ml-1 text-2xl md:text-3xl font-thin">ART</span>
+            <svg width="40" height="40" viewBox="0 0 312.5 312.5" className="text-gold">
+              {/* Insert your SVG path data here */}
+            </svg>
+            <span className="ml-2 text-2xl md:text-3xl font-serif font-bold text-gold">ROYAL</span>
+            <span className="text-2xl md:text-3xl font-thin">ART</span>
           </motion.div>
         </Link>
         
         <nav className="hidden md:flex space-x-8">
-          {['Home', 'Gallery', 'Artists', 'Exhibitions', 'About'].map((item, i) => (
+          {['Home', 'Gallery', 'About', 'Contact'].map((item, i) => (
             <motion.div
               key={item}
               initial={{ opacity: 0, y: -10 }}
@@ -51,9 +53,9 @@ const Header = () => {
             >
               <Link 
                 to={`/${item === 'Home' ? '' : item.toLowerCase()}`}
-                className={`text-lg hover:text-royal transition-colors relative ${
+                className={`text-lg hover:text-gold transition-colors relative ${
                   location.pathname === (item === 'Home' ? '/' : `/${item.toLowerCase()}`) 
-                    ? 'text-royal font-medium' 
+                    ? 'text-gold font-medium' 
                     : 'text-foreground'
                 }`}
               >
@@ -70,13 +72,13 @@ const Header = () => {
         </nav>
         
         <div className="flex items-center space-x-4">
-          <button aria-label="Search" className="hover:text-royal transition-colors">
+          <button aria-label="Search" className="hover:text-gold transition-colors">
             <Search size={20} />
           </button>
-          <Link to="/account" aria-label="Account" className="hover:text-royal transition-colors">
+          <Link to="/register" aria-label="Account" className="hover:text-gold transition-colors">
             <User size={20} />
           </Link>
-          <Link to="/cart" aria-label="Shopping cart" className="hover:text-royal transition-colors relative">
+          <Link to="/cart" aria-label="Shopping cart" className="hover:text-gold transition-colors relative">
             <ShoppingCart size={20} />
             <span className="absolute -top-2 -right-2 bg-gold text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
               3
