@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { gsap } from 'gsap';
@@ -30,6 +29,7 @@ const ProductDetail = () => {
       }
     ],
     description: 'This exquisite vase represents the pinnacle of contemporary ceramic artistry. Hand-crafted with meticulous attention to detail, the delicate gold trim highlights the sweeping curves of this masterpiece.',
+    shortDescription: 'Exquisite handcrafted vase with 24k gold trim',
     details: [
       'Height: 45 cm',
       'Width: 25 cm',
@@ -51,6 +51,7 @@ const ProductDetail = () => {
     inStock: 3,
     category: "Ceramics",
     tags: ["Vase", "Gold", "Luxury", "Home Decor"],
+    featured: true,
   };
   
   const [selectedColor, setSelectedColor] = useState({ name: 'Mahogany', value: '#8A5E3C', hex: '#8A5E3C' });
