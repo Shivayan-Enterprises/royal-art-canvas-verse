@@ -6,12 +6,37 @@ import SceneWrapper from './SculptureModel';
 import { motion } from 'framer-motion';
 import { ZoomIn, ZoomOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ErrorBoundary } from 'react-error-boundary';
 
 interface ProductViewer3DProps {
   productTitle: string;
   productId: string;
   color?: string;
 }
+
+const Fallback = () => (
+  <div className="w-full h-full flex items-center justify-center bg-gray-100">
+    <div className="text-center p-4">
+      <p className="text-lg font-medium mb-2">3D Preview not available</p>
+      <p className="text-sm text-gray-500">Please check product images instead</p>
+    </div>
+  </div>
+);
+
+const ProductScene = ({ autoRotate, color }: { autoRotate: boolean, color: string }) => {
+  return (
+    <Canvas 
+      shadows 
+      dpr={[1, 2]} 
+      camera={{ position: [0, 0, 4], fov: 50 }} 
+      className="canvas-container"
+    >
+      <Suspense fallback={null}>
+        <SceneWrapper autoRotate={autoRotate} color={color} />
+      </Suspense>
+    </Canvas>
+  );
+};
 
 const ProductViewer3D = ({ productTitle, productId, color = "#8A5E3C" }: ProductViewer3DProps) => {
   const [isRotating, setIsRotating] = useState(true);
@@ -29,6 +54,12 @@ const ProductViewer3D = ({ productTitle, productId, color = "#8A5E3C" }: Product
     });
   };
   
+  useEffect(() => {
+    // Simulate loading time for demonstration purposes
+    const timer = setTimeout(() => setIsLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+  
   return (
     <div className="relative w-full h-full">
       {/* Loading overlay */}
@@ -45,20 +76,9 @@ const ProductViewer3D = ({ productTitle, productId, color = "#8A5E3C" }: Product
         </div>
       )}
       
-      <Canvas 
-        shadows 
-        dpr={[1, 2]} 
-        camera={{ position: [0, 0, 4], fov: 50 }} 
-        className="canvas-container"
-        onCreated={() => {
-          // Simulate loading time for demonstration purposes
-          setTimeout(() => setIsLoading(false), 1500);
-        }}
-      >
-        <Suspense fallback={null}>
-          <SceneWrapper autoRotate={isRotating} color={color} />
-        </Suspense>
-      </Canvas>
+      <ErrorBoundary FallbackComponent={Fallback}>
+        <ProductScene autoRotate={isRotating} color={color} />
+      </ErrorBoundary>
       
       {/* Controls overlay */}
       <motion.div 

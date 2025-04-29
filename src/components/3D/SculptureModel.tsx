@@ -1,13 +1,8 @@
 
 import { useRef, useEffect } from 'react';
-import { useGLTF, OrbitControls, Stage, Environment } from '@react-three/drei';
+import { OrbitControls, Stage, Environment } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { Object3D, Mesh } from 'three';
-
-// Define a path to our sample 3D model
-// Using a simple vase as an example art piece
-const MODEL_PATH = "https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/vase-2/model.gltf";
 
 interface SculptureModelProps {
   autoRotate?: boolean;
@@ -22,48 +17,27 @@ export function SculptureModel({
   scale = 1, 
   color = "#8A5E3C"
 }: SculptureModelProps) {
-  const ref = useRef<THREE.Group>(null);
-  const gltf = useGLTF(MODEL_PATH);
-  
-  // Clone the model to avoid modifying the original
-  useEffect(() => {
-    if (ref.current) {
-      if (gltf.scene) {
-        gltf.scene.traverse((child) => {
-          if ((child as THREE.Mesh).isMesh) {
-            // Apply a rich material to the model
-            (child as THREE.Mesh).material = new THREE.MeshStandardMaterial({
-              color: new THREE.Color(color),
-              roughness: 0.3,
-              metalness: 0.7,
-              envMapIntensity: 1,
-            });
-          }
-        });
-      }
-    }
-  }, [gltf, color]);
+  const meshRef = useRef<THREE.Mesh>(null);
   
   // Add subtle auto-rotation if enabled
   useFrame((state, delta) => {
-    if (ref.current && autoRotate) {
-      ref.current.rotation.y += delta * 0.2;
+    if (meshRef.current && autoRotate) {
+      meshRef.current.rotation.y += delta * 0.2;
     }
   });
 
   return (
-    <group dispose={null}>
-      <primitive
-        object={gltf.scene}
-        ref={ref}
-        position={position}
-        scale={scale}
+    <mesh ref={meshRef} position={position} scale={scale}>
+      <cylinderGeometry args={[0.7, 1, 2, 32]} />
+      <meshStandardMaterial 
+        color={color}
+        roughness={0.3}
+        metalness={0.7}
+        envMapIntensity={1}
       />
-    </group>
+    </mesh>
   );
 }
-
-useGLTF.preload(MODEL_PATH);
 
 interface SceneWrapperProps {
   autoRotate?: boolean;
