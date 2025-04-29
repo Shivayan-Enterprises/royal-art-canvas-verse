@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout/Layout';
@@ -92,15 +91,13 @@ const Index = () => {
               >
                 <Link to={`/products/${product.id}`} className="block h-64 overflow-hidden">
                   {product.images && product.images.length > 0 ? (
-                    <img 
+                    <video 
                       src={product.images[0].src}
-                      alt={product.title}
+                      // alt={product.title}
                       className="w-full h-full object-cover transition-transform hover:scale-110 duration-500"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-500">
-                      No Image Available
-                    </div>
+                   <video src="/WhatsApp वीडियो 2025-04-29, 10.58.38 बजे_b67bbf3c.mp4"></video>
                   )}
                 </Link>
                 
@@ -216,7 +213,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-serif mb-12 text-center">Client Testimonials</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div 
+            {/* <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -261,7 +258,7 @@ const Index = () => {
               </div>
               <p className="italic mb-4">"The Chhatrapati Shivaji Maharaj portrait I purchased is breathtaking. It captures the essence and strength of the legendary ruler perfectly."</p>
               <div className="font-medium">- Rahul Patel</div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>

@@ -1,8 +1,26 @@
-# Welcome to your Lovable project
+# Welcome to your project
 
-## Project info
+<!-- **URL**: https://lovable.dev/projects/beb9d7f0-d385-4a79-baf9-0fca0a276fa2 -->
 
-**URL**: https://lovable.dev/projects/beb9d7f0-d385-4a79-baf9-0fca0a276fa2
+## Getting Started
+
+<!-- **Use Lovable**
+
+Simply visit the [Lovable Project](https://lovable.dev/projects/beb9d7f0-d385-4a79-baf9-0fca0a276fa2) and start prompting.
+
+Changes made via Lovable will be committed automatically to this repo. -->
+
+## Local Development
+
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+<!-- ## Publishing
+
+Simply open [Lovable](https://lovable.dev/projects/beb9d7f0-d385-4a79-baf9-0fca0a276fa2) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can connect a custom domain to your Lovable project. Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide) -->
 
 ## How can I edit this code?
 
@@ -15,8 +33,6 @@ Simply visit the [Lovable Project](https://lovable.dev/projects/beb9d7f0-d385-4a
 Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
