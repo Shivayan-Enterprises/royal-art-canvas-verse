@@ -1,5 +1,5 @@
 
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useToast } from '@/components/ui/use-toast';
 import SceneWrapper from './SculptureModel';
