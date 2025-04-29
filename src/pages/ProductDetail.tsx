@@ -121,19 +121,11 @@ const ProductDetail = () => {
             {product.images && product.images.length > 0 ? (
               <div>
                 <div className="h-[500px] md:h-[600px] bg-cream rounded-lg overflow-hidden shadow-lg mb-4">
-                  {activeImageIndex === 0 && product.id ? (
-                    <ProductViewer3D 
-                      productTitle={product.title} 
-                      productId={product.id}
-                      color={selectedColor.value} 
-                    />
-                  ) : (
-                    <img 
-                      src={product.images[activeImageIndex].src}
-                      alt={product.images[activeImageIndex].alt}
-                      className="w-full h-full object-contain"
-                    />
-                  )}
+                  <img 
+                    src={product.images[activeImageIndex].src}
+                    alt={product.images[activeImageIndex].alt}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 
                 {product.images.length > 1 && (
@@ -153,26 +145,12 @@ const ProductDetail = () => {
                         />
                       </button>
                     ))}
-                    
-                    {/* 3D view thumbnail */}
-                    <button
-                      onClick={() => setActiveImageIndex(0)}
-                      className={`w-20 h-20 border-2 rounded overflow-hidden flex-shrink-0 bg-gray-100 flex items-center justify-center ${
-                        activeImageIndex === 0 ? 'border-gold' : 'border-gray-200'
-                      }`}
-                    >
-                      <span className="text-xs font-medium">3D View</span>
-                    </button>
                   </div>
                 )}
               </div>
             ) : (
-              <div className="h-[500px] md:h-[600px] bg-cream rounded-lg overflow-hidden shadow-lg">
-                <ProductViewer3D 
-                  productTitle={product.title} 
-                  productId={product.id}
-                  color={selectedColor.value} 
-                />
+              <div className="h-[500px] md:h-[600px] bg-cream rounded-lg overflow-hidden shadow-lg flex items-center justify-center">
+                <span className="text-gray-500">No product images available</span>
               </div>
             )}
           </div>
