@@ -38,8 +38,8 @@ const Header = () => {
             <svg width="40" height="40" viewBox="0 0 312.5 312.5" className="text-gold">
               {/* Insert your SVG path data here */}
             </svg>
-            <span className="ml-2 text-2xl md:text-3xl font-serif font-bold text-gold">ROYAL</span>
-            <span className="text-2xl md:text-3xl font-thin">ART</span>
+            <span className="ml-2 text-2xl md:text-3xl font-serif font-bold text-gold">SS</span>
+            <span className="text-2xl md:text-3xl font-thin"> DIGITAL</span>
           </motion.div>
         </Link>
         
