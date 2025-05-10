@@ -43,7 +43,7 @@ export const products: Product[] = [
     shortDescription: "Exquisite handcrafted vase with 24k gold trim",
     description: "This exquisite vase represents the pinnacle of contemporary ceramic artistry. Hand-crafted with meticulous attention to detail, the delicate gold trim highlights the sweeping curves of this masterpiece. The rich mahogany glaze provides the perfect backdrop for the intricate detailing, creating a striking juxtaposition of color and texture.",
     images: [
-      { src: "/assets/products/royal-vase-1.jpg", alt: "Royal Gold-Trimmed Vase - Main View" },
+      { src: "https://shivajimaharajfoundation.com/wp-content/uploads/2024/08/The-Mighty-Hindu-Warrior-Shivaji-Maharaj-e1725271026839.jpeg", alt: "Royal Gold-Trimmed Vase - Main View" },
       { src: "/assets/products/royal-vase-2.jpg", alt: "Royal Gold-Trimmed Vase - Side View" },
       { src: "/assets/products/royal-vase-3.jpg", alt: "Royal Gold-Trimmed Vase - Detail View" },
     ],
@@ -92,7 +92,7 @@ export const products: Product[] = [
     shortDescription: "Majestic portrait of the legendary Maratha warrior king",
     description: "This breathtaking portrait captures the essence and valor of Chhatrapati Shivaji Maharaj, the legendary founder of the Maratha Empire. Using traditional techniques blended with contemporary styling, the artist has created a masterpiece that radiates strength, wisdom, and royal dignity. The intricate gold leaf detailing against the rich color palette brings this historical figure to life.",
     images: [
-      { src: "/assets/products/shivaji-1.jpg", alt: "Shivaji Maharaj Portrait - Front" },
+      { src: "https://shivajimaharajfoundation.com/wp-content/uploads/2024/08/Chhatrapati-Shivaji-Maharaj-37.jpg", alt: "Shivaji Maharaj Portrait - Front" },
       { src: "/assets/products/shivaji-2.jpg", alt: "Shivaji Maharaj Portrait - Detail" },
       { src: "/assets/products/shivaji-3.jpg", alt: "Shivaji Maharaj Portrait - Frame Detail" },
     ],
@@ -141,7 +141,7 @@ export const products: Product[] = [
     shortDescription: "Ornate gold-finished mirror inspired by royal heritage designs",
     description: "This magnificent mirror features an elaborately carved frame finished in genuine gold leaf. Each intricate detail is hand-carved by master craftsmen, creating a truly luxurious piece that reflects both light and heritage. The ornate design draws inspiration from royal palaces, making it a statement piece for any sophisticated interior.",
     images: [
-      { src: "/assets/products/gold-frame-1.jpg", alt: "Gold Frame Mirror - Full View" },
+      { src: "https://shivajimaharajfoundation.com/wp-content/uploads/2024/08/Shivaji-maharaj-wallpaper-549x1024.jpeg", alt: "Gold Frame Mirror - Full View" },
       { src: "/assets/products/gold-frame-2.jpg", alt: "Gold Frame Mirror - Detail" },
       { src: "/assets/products/gold-frame-3.jpg", alt: "Gold Frame Mirror - Side Profile" },
     ],
@@ -190,7 +190,7 @@ export const products: Product[] = [
     shortDescription: "Contemporary abstract painting with dramatic gold accents",
     description: "This striking contemporary artwork combines bold brushstrokes with luminous gold elements that catch and reflect light from every angle. The artist has masterfully balanced deep red tones with black undertones and brilliant gold highlights, creating a composition that's both dramatic and elegant. Each piece is unique, with slight variations in the gold application making every artwork one-of-a-kind.",
     images: [
-      { src: "/assets/products/abstract-gold-1.jpg", alt: "Abstract Gold Painting - Full View" },
+      { src: "https://shivajimaharajfoundation.com/wp-content/uploads/2024/09/Chhatrapati-Shivaji-Maharaj-34.jpg", alt: "Abstract Gold Painting - Full View" },
       { src: "/assets/products/abstract-gold-2.jpg", alt: "Abstract Gold Painting - Detail" },
       { src: "/assets/products/abstract-gold-3.jpg", alt: "Abstract Gold Painting - Side Angle" },
     ],

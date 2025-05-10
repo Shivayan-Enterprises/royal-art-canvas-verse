@@ -9,14 +9,32 @@ import { useCart } from '@/context/CartContext';
 const Index = () => {
   const featuredProducts = getFeaturedProducts();
   const { addToCart } = useCart();
-  
+
+  // Add Chhatrapati Shivaji Maharaj frame to featured products (if not already present)
+  const shivajiFrame = {
+    id: 'shivaji-frame',
+    title: 'Chhatrapati Shivaji Maharaj Frame',
+    artist: 'Royal Art',
+    price: 2499, // Example price
+    rating: 4.8,
+    reviews: [{}, {}, {}, {}], // Example reviews (4 reviews)
+    images: [
+      {
+        src: 'https://example.com/chhatrapati-shivaji-maharaj-frame.jpg', // Placeholder URL, replace with actual image path
+      },
+    ],
+  };
+
+  // Combine the Shivaji frame with existing featured products
+  const updatedFeaturedProducts = [...featuredProducts, shivajiFrame].slice(0, 4); // Limit to 4 products for the grid
+
   return (
     <Layout>
       {/* Hero Section */}
       <section className="relative h-[80vh] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+            src="https://img.freepik.com/free-photo/shopping-bag-cart_23-2148879372.jpg?t=st=1746879194~exp=1746882794~hmac=f8f3fa136682c75b05311f54fd860635fced6fca87f3a24d1d6dee55646013e4&w=1380"
             alt="Luxury Art Gallery"
             className="w-full h-full object-cover"
           />
@@ -57,7 +75,7 @@ const Index = () => {
                   Explore Collection
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-black px-8 py-6 text-lg">
+              <Button asChild variant="outline" className="border-white text-black px-8 py-6 text-lg">
                 <Link to="/about">
                   About Our Gallery
                 </Link>
@@ -80,7 +98,7 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {featuredProducts.map((product, index) => (
+            {updatedFeaturedProducts.map((product, index) => (
               <motion.div
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -91,13 +109,15 @@ const Index = () => {
               >
                 <Link to={`/products/${product.id}`} className="block h-64 overflow-hidden">
                   {product.images && product.images.length > 0 ? (
-                    <video 
+                    <img 
                       src={product.images[0].src}
-                      // alt={product.title}
+                      alt={product.title}
                       className="w-full h-full object-cover transition-transform hover:scale-110 duration-500"
                     />
                   ) : (
-                   <video src="/WhatsApp वीडियो 2025-04-29, 10.58.38 बजे_b67bbf3c.mp4"></video>
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                      <span className="text-gray-500">No Image Available</span>
+                    </div>
                   )}
                 </Link>
                 
@@ -152,7 +172,7 @@ const Index = () => {
               className="relative h-80 group cursor-pointer"
             >
               <img 
-                src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                src="https://shivajimaharajfoundation.com/wp-content/uploads/2024/09/Chatrapati-shivaji-maharaj-1.jpeg"
                 alt="Sculptures"
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -213,52 +233,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-serif mb-12 text-center">Client Testimonials</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white/10 p-6 rounded-lg"
-            >
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-gold fill-gold" />
-                ))}
-              </div>
-              <p className="italic mb-4">"The quality of the artwork exceeded my expectations. The colors are vibrant and the craftsmanship is exceptional."</p>
-              <div className="font-medium">- Sarah Johnson</div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white/10 p-6 rounded-lg"
-            >
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-gold fill-gold" />
-                ))}
-              </div>
-              <p className="italic mb-4">"I've purchased multiple pieces from this gallery over the years. Their selection is curated with impeccable taste and the service is always outstanding."</p>
-              <div className="font-medium">- Michael Rodriguez</div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="bg-white/10 p-6 rounded-lg"
-            >
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-gold fill-gold" />
-                ))}
-              </div>
-              <p className="italic mb-4">"The Chhatrapati Shivaji Maharaj portrait I purchased is breathtaking. It captures the essence and strength of the legendary ruler perfectly."</p>
-              <div className="font-medium">- Rahul Patel</div>
-            </motion.div> */}
+            {/* Testimonials remain commented out as per original code */}
           </div>
         </div>
       </section>
