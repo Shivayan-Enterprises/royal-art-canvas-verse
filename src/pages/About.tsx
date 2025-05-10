@@ -17,7 +17,7 @@ const About = () => {
             animate={{ y: 0 }}
             className="text-4xl md:text-6xl font-serif mb-12 text-center"
           >
-            About Royal Art Gallery
+            About SS Digital
           </motion.h1>
           
           <motion.div 
@@ -35,7 +35,7 @@ const About = () => {
             </div>
             <div className="space-y-6">
               <p className="text-lg">
-                Founded in 2020, Royal Art Gallery has become a premier destination for art enthusiasts 
+                Founded in 2020, SS Digital has become a premier destination for art enthusiasts 
                 and collectors seeking extraordinary pieces that transcend time and tradition.
               </p>
               <p className="text-lg">

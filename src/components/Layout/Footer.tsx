@@ -14,7 +14,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-serif font-medium mb-4">ROYAL ART</h3>
+            <h3 className="text-2xl font-serif font-medium mb-4">SS Digital</h3>
             <p className="text-cream-dark mb-4">
               Curating fine art for distinguished collectors and enthusiasts.
               Established 1992.
@@ -99,7 +99,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-royal text-center">
-          <p className="text-cream-dark">© {new Date().getFullYear()} Royal Art Gallery. All rights reserved.</p>
+          <p className="text-cream-dark">© {new Date().getFullYear()} SS Digital . All rights reserved.</p>
         </div>
       </div>
     </footer>
